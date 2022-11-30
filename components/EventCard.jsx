@@ -9,10 +9,10 @@ const EventCard = ({ event }) => {
         <svg
           stroke="currentColor"
           fill="none"
-          stroke-width="2"
+          strokeWidth={2}
           viewBox="0 0 24 24"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin = "round"
           className="absolute right-4 top-4 h-4 w-4 text-black opacity-0 transition-opacity group-hover:opacity-100 dark:text-white"
           height="1em"
           width="1em"
@@ -40,10 +40,10 @@ const EventCard = ({ event }) => {
                   <svg
                     stroke="currentColor"
                     fill="none"
-                    stroke-width="2"
+                    strokeWidth={2}
                     viewBox="0 0 24 24"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin = "round"
                     className="mr-1 h-3 w-3 stroke-[3px]"
                     height="1em"
                     width="1em"
@@ -60,10 +60,10 @@ const EventCard = ({ event }) => {
                   <svg
                     stroke="currentColor"
                     fill="none"
-                    stroke-width="2"
+                    strokeWidth={2}
                     viewBox="0 0 24 24"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin = "round"
                     className="mr-1 h-3 w-3 stroke-[3px]"
                     height="1em"
                     width="1em"

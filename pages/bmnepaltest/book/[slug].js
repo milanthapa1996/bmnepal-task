@@ -18,10 +18,10 @@ const Book = () => {
   };
 
   const tConv24 = (time24) => {
-    var ts = time24;
+    var ts = time24 || "00:00";
     var H = +ts.substr(0, 2);
     var h = H % 12 || 12;
-    h = h < 10 ? "0" + h : h; // leading 0 at the left for 1 digit hours
+    h = h < 10 ? "0" + h : h;
     var ampm = H < 12 ? " AM" : " PM";
     ts = h + ts.substr(2, 3) + ampm;
     return ts;
@@ -38,36 +38,36 @@ const Book = () => {
         <div className="main overflow-hidden dark:border-1 dark:bg-darkgray-100 bg-white dark:border-darkgray-300 rounded-md sm:border">
           <div className="sm:flex">
             {/* // first card */}
-            <div class="sm:dark:border-darkgray-300 dark:text-darkgray-600 flex flex-col px-6 pt-6 pb-0 text-gray-600 sm:w-1/2 sm:border-r sm:pb-6">
-              <ul class=""></ul>
-              <h2 class="mt-2 break-words text-sm font-medium text-gray-600 dark:text-gray-300">
+            <div className="sm:dark:border-darkgray-300 dark:text-darkgray-600 flex flex-col px-6 pt-6 pb-0 text-gray-600 sm:w-1/2 sm:border-r sm:pb-6">
+              <ul className=""></ul>
+              <h2 className="mt-2 break-words text-sm font-medium text-gray-600 dark:text-gray-300">
                 Milan Thapa
               </h2>
-              <h1 class="font-cal dark:text-darkgray-900 mb-6 break-words text-2xl font-semibold text-gray-900">
+              <h1 className="font-cal dark:text-darkgray-900 mb-6 break-words text-2xl font-semibold text-gray-900">
                 {value.title}
               </h1>
-              <div class="dark:text-darkgray-600 flex flex-col space-y-4 text-sm font-medium text-gray-600">
-                <div class="dark:text-darkgray-600 mr-6 flex w-full flex-col space-y-2 break-words text-sm text-gray-600">
-                  <div class="flex flex-row items-center text-sm font-medium">
+              <div className="dark:text-darkgray-600 flex flex-col space-y-4 text-sm font-medium text-gray-600">
+                <div className="dark:text-darkgray-600 mr-6 flex w-full flex-col space-y-2 break-words text-sm text-gray-600">
+                  <div className="flex flex-row items-center text-sm font-medium">
                     <img
                       src="https://cal.com/api/app-store/dailyvideo/icon.svg"
-                      class="mr-[10px] ml-[2px] h-4 w-4 opacity-70 dark:opacity-100 "
+                      className="mr-[10px] ml-[2px] h-4 w-4 opacity-70 dark:opacity-100 "
                       alt="Cal Video icon"
                     />
-                    <p class="truncate" data-state="closed">
+                    <p className="truncate" data-state="closed">
                       Cal Video
                     </p>
                   </div>
                 </div>
-                <div class="flex flex-nowrap text-sm font-medium dark:text-darkgray-600 text-gray-600">
+                <div className="flex flex-nowrap text-sm font-medium dark:text-darkgray-600 text-gray-600">
                   <svg
                     stroke="currentColor"
                     fill="none"
-                    stroke-width="2"
+                    strokeWidth={2}
                     viewBox="0 0 24 24"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="min-h-4 min-w-4 mr-[10px] ml-[2px] inline-block mt-[2px]"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="min-h-4 min-w-4 mr-[10px] ml-[2px] inline-block mt-[2px]"
                     height="1em"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
@@ -77,15 +77,15 @@ const Book = () => {
                   </svg>
                   {value.allocatedTime}
                 </div>
-                <div class="text-green-500 flex items-start text-sm">
+                <div className="text-green-500 flex items-start text-sm">
                   <svg
                     stroke="currentColor"
                     fill="none"
-                    stroke-width="2"
+                    strokeWidth={2}
                     viewBox="0 0 24 24"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="mr-[10px] ml-[2px] mt-[2px] inline-block h-4 w-4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="mr-[10px] ml-[2px] mt-[2px] inline-block h-4 w-4"
                     height="1em"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ const Book = () => {
                     <line x1="8" y1="2" x2="8" y2="6"></line>
                     <line x1="3" y1="10" x2="21" y2="10"></line>
                   </svg>
-                  <div class="text-sm font-medium">
+                  <div className="text-sm font-medium">
                     {value.view === "12hr" ? value.slot : tConv24(value.slot)},{" "}
                     {value.selectedDate}
                   </div>
@@ -111,39 +111,39 @@ const Book = () => {
             </div>
             <div className="p-6 sm:w-1/2">
               <form onSubmit={handleSubmit}>
-                <div class="mb-4">
+                <div className="mb-4">
                   <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700 dark:text-white"
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 dark:text-white"
                   >
                     Your name
                   </label>
-                  <div class="mt-1">
+                  <div className="mt-1">
                     <input
                       type="text"
                       name="name"
                       id="name"
                       required
-                      class="mb-2 h-9 border b py-2 px-3  placeholder:text-gray-400 hover:border-gray-400 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-1  dark:placeholder:text-darkgray-600 focus:border-brand dark:border-darkgray-300 dark:text-darkgray-900 block w-full rounded-md border-gray-300 text-sm focus:ring-black disabled:bg-gray-200 disabled:hover:cursor-not-allowed dark:bg-transparent dark:selection:bg-green-500 disabled:dark:text-gray-500"
+                      className="mb-2 h-9 border b py-2 px-3  placeholder:text-gray-400 hover:border-gray-400 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-1  dark:placeholder:text-darkgray-600 focus:border-brand dark:border-darkgray-300 dark:text-darkgray-900 block w-full rounded-md border-gray-300 text-sm focus:ring-black disabled:bg-gray-200 disabled:hover:cursor-not-allowed dark:bg-transparent dark:selection:bg-green-500 disabled:dark:text-gray-500"
                       placeholder="John Doe"
                       onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                 </div>
-                <div class="mb-4">
+                <div className="mb-4">
                   <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 dark:text-white"
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-white"
                   >
                     Email address
                   </label>
-                  <div class="mt-1">
+                  <div className="mt-1">
                     <input
                       type="search"
-                      autocapitalize="none"
-                      autocomplete="email"
-                      autocorrect="off"
-                      inputmode="email"
+                      autoCapitalize="none"
+                      autoComplete="email"
+                      autoCorrect="off"
+                      inputMode="email"
                       name="email"
                       required
                       className="mb-2 h-9 border b py-2 px-3  placeholder:text-gray-400 hover:border-gray-400 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-offset-1  dark:placeholder:text-darkgray-600 focus:border-brand dark:border-darkgray-300 dark:text-darkgray-900 block w-full rounded-md border-gray-300 text-sm focus:ring-black disabled:bg-gray-200 disabled:hover:cursor-not-allowed dark:bg-transparent dark:selection:bg-green-500 disabled:dark:text-gray-500"
@@ -152,10 +152,10 @@ const Book = () => {
                     />
                   </div>
                 </div>
-                <div class="mb-4">
+                <div className="mb-4">
                   <label
-                    for="notes"
-                    class="mb-1 block text-sm font-medium text-gray-700 dark:text-white"
+                    htmlFor="notes"
+                    className="mb-1 block text-sm font-medium text-gray-700 dark:text-white"
                   >
                     Additional notes
                   </label>
@@ -167,21 +167,21 @@ const Book = () => {
                     placeholder="Please share anything that will help prepare for our meeting."
                   ></textarea>
                 </div>
-                <div class="flex justify-end space-x-2 rtl:space-x-reverse">
+                <div className="flex justify-end space-x-2 rtl:space-x-reverse">
                   <button
                     tooltip="Add guests"
-                    class="items-center text-sm font-medium relative rounded-md transition-colors text-gray-900 dark:text-darkgray-900 flex justify-center min-h-[36px] min-w-[36px]  mr-auto"
+                    className="items-center text-sm font-medium relative rounded-md transition-colors text-gray-900 dark:text-darkgray-900 flex justify-center min-h-[36px] min-w-[36px]  mr-auto"
                     type="button"
                     data-state="closed"
                   >
                     <svg
                       stroke="currentColor"
                       fill="none"
-                      stroke-width="2"
+                      strokeWidth={2}
                       viewBox="0 0 24 24"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="inline-flex h-4 w-4 "
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="inline-flex h-4 w-4 "
                       height="1em"
                       width="1em"
                       xmlns="http://www.w3.org/2000/svg"
