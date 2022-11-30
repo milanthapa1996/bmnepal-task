@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @media print {
+    body {
+        height: "min-h-screen";
+        background-color: brown;
+    }
+} */
